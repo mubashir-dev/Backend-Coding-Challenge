@@ -1,0 +1,6 @@
+node_modules/
+.env
+Goals.txt
+.vscode
+.dockerignore
+package-lock.json
