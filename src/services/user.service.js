@@ -16,6 +16,7 @@ exports.findAll = async (req, res, next) => {
               $project: {
                 _id: 1,
                 title: 1,
+                access: 1,
               },
             },
           ],
@@ -62,6 +63,7 @@ exports.find = async (req, res, next) => {
               $project: {
                 _id: 1,
                 title: 1,
+                access: 1,
               },
             },
           ],
