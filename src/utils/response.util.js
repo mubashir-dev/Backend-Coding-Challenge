@@ -80,3 +80,11 @@ exports.unauthorizedResponse = function (res, msg) {
   };
   return res.status(401).json(resData);
 };
+
+exports.forbiddenResponse = function (res, msg) {
+  let resData = {
+    status: false,
+    message: msg,
+  };
+  return res.status(403).json(resData);
+};

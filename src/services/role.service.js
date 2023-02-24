@@ -11,9 +11,9 @@ exports.findAll = async (req, res, next) => {
   }
 };
 
-exports.find = async (req, res, next, id) => {
+exports.find = async (filterObject, next) => {
   try {
-    const { id } = req.params;
+    const { id } = filterObject;
     const result = Role.findOne({ _id: ObjectId(id) });
     return result;
   } catch (error) {

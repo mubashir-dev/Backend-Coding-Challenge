@@ -16,7 +16,10 @@ exports.index = async (req, res, next) => {
 exports.find = async (req, res, next) => {
   try {
     const { id } = req.params;
-    const data = await roleService.find(req, res, next);
+    const filterObject = {
+      id,
+    };
+    const data = await roleService.find(filterObject, next);
     if (!data) {
       return apiResponse.notFound(
         res,

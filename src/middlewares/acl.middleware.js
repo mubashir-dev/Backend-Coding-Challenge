@@ -1,13 +1,28 @@
 const jwtService = require("../services/jwt.service");
+const apiResponse = require("../utils/response.util");
+const roleService = require("../services/role.service");
 
-const auth = async (req, res, next) => {
+const acl = async (req, res, next) => {
   try {
-    const user = req.user;
-    //getting json token
-    const token = req.headers["authorization"].split(" ")[1];
-    //getting userpayload
-    const userPlayload = await jwtService.verifyAccessToken(token);
-    req.user = userPlayload;
+    const { role } = req.user;
+    const { access } = await roleService.find({ id: role._id }, next);
+    const { method } = req;
+
+    if (method == "GET" && access.read == false) {
+      return apiResponse.forbiddenResponse(res, "Permission denied");
+    }
+    if (method == "POST" && access.write == false) {
+      return apiResponse.forbiddenResponse(res, "Permission denied");
+    }
+    if (method == "PUT" && access.update == false) {
+      return apiResponse.forbiddenResponse(res, "Permission denied");
+    }
+    if (method == "PATCH" && access.update == false) {
+      return apiResponse.forbiddenResponse(res, "Permission denied");
+    }
+    if (method == "DELETE" && access.delete == false) {
+      return apiResponse.forbiddenResponse(res, "Permission denied");
+    }
     next();
   } catch (error) {
     next(error);
@@ -15,5 +30,5 @@ const auth = async (req, res, next) => {
 };
 
 module.exports = {
-  auth,
+  acl,
 };
