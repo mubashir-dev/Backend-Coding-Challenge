@@ -9,6 +9,7 @@ const {
   RoleRoutes,
   UserRoutes,
   AuthRoutes,
+  InvestmentTypesRoutes,
 } = require("./src/routes/index.routes");
 
 //global middlewares
@@ -21,11 +22,12 @@ app.use(
 
 //Routing
 app.get("/ping", (req, res, next) => {
-  res.status(200).send({ message: "Server is Up & Running :dd" });
+  res.status(200).send({ message: "Server is Up & Running" });
 });
 
 app.use("/role", [auth, acl], RoleRoutes);
 app.use("/user", [auth, acl], UserRoutes);
+app.use("/investment-types", [auth, acl], InvestmentTypesRoutes);
 app.use("/auth", AuthRoutes);
 
 //404
