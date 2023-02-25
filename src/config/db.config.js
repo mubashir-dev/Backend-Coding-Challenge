@@ -6,13 +6,13 @@ const mongooseOptions = {
 };
 
 const connectDatabase = function () {
-  const url = `mongodb://root:root@db:${process.env.DB_PORT}/${process.env.DB_NAME}`;
+  const url = `mongodb://root:123456@mongoDb:27017/owbc`;
   return new Promise((resolve, reject) => {
     mongoose.connect(url, mongooseOptions, (err) => {
       if (!err) {
         resolve("connected");
       } else {
-        reject("connction failed");
+        reject(err);
       }
     });
   });
