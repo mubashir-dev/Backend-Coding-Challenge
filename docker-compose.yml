@@ -1,0 +1,43 @@
+version: '3'
+
+services:
+ mongoDb:
+    image: bitnami/mongodb:latest
+    container_name: mongoDatabase
+    restart: unless-stopped
+    env_file: ./.env
+    ports:
+      - 27017:27017
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: $DB_USERNAME
+      MONGO_INITDB_ROOT_PASSWORD: $DB_PASSWORD
+      MONGO_INITDB_DATABASE: $DB_NAME
+    volumes:     
+      - dbdata:/data/db
+ server:
+    image: server
+    depends_on:
+      - mongoDb
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: server
+    restart: unless-stopped
+    env_file: ./.env
+    environment:
+      - MONGO_USERNAME:$DB_USERNAME
+      - MONGO_PASSWORD:$DB_PASSWORD
+      - MONGO_HOSTNAME:$DB_HOST
+      - MONGO_PORT:$DB_PORT
+      - MONGO_DB:$DB_NAME
+    stdin_open: true
+    tty: true
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/usr/src/app/
+      - .env/:/usr/src/app/.env
+      - node_modules:/usr/src/app/node_modules
+volumes:
+  dbdata:
+  node_modules:

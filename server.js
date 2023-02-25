@@ -2,6 +2,8 @@ const express = require("express");
 const app = express();
 require("dotenv").config();
 const { ExceptionHandler } = require("./src/middlewares/exception.middleware");
+const { auth } = require("./src/middlewares/auth.middleware");
+const { acl } = require("./src/middlewares/acl.middleware");
 const { connectDatabase } = require("./src/config/db.config");
 const {
   RoleRoutes,
@@ -22,8 +24,8 @@ app.get("/ping", (req, res, next) => {
   res.status(200).send({ message: "Server is Up & Running :dd" });
 });
 
-app.use("/role", RoleRoutes);
-app.use("/user", UserRoutes);
+app.use("/role", [auth, acl], RoleRoutes);
+app.use("/user", [auth, acl], UserRoutes);
 app.use("/auth", AuthRoutes);
 
 //404

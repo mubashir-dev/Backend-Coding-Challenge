@@ -1,5 +1,7 @@
 const jwt = require("jsonwebtoken");
+const httpError = require("http-errors");
 
+//generating access token
 exports.signAccessToken = (userPlayload) => {
   return new Promise((resolve, reject) => {
     const { id, name, role } = userPlayload;
@@ -22,22 +24,17 @@ exports.signAccessToken = (userPlayload) => {
   });
 };
 
-exports.verifyAccessToken = (req, res, next) => {
-  if (!req.headers["authorization"]) return next(httpError.Unauthorized());
-  const authHeader = req.headers["authorization"];
-  const bearerToken = authHeader.split(" ");
-  const token = bearerToken[1];
-  jwt.verify(token, process.env.JWT_SECRET, (err, payload) => {
-    if (err) {
-      const message =
-        err.name === "JsonWebTokenError" ? "Unauthorized" : err.message;
-      return next(httpError.Unauthorized(message));
-    }
-    req.user = payload;
-    next();
+//verifying verifying token
+exports.verifyAccessToken = (token) => {
+  return new Promise((resolve, reject) => {
+    jwt.verify(token, process.env.JWT_SECRET, (err, payload) => {
+      if (err) reject(httpError(400, "Invalid/Expired access token"));
+      resolve(payload);
+    });
   });
 };
 
+//generating refresh token
 exports.signARefreshToken = (userPlayload) => {
   return new Promise((resolve, reject) => {
     const { id, name, role } = userPlayload;
@@ -60,6 +57,7 @@ exports.signARefreshToken = (userPlayload) => {
   });
 };
 
+//verifying refresh token
 exports.verifyRefreshToken = (refreshToken) => {
   return new Promise((resolve, reject) => {
     jwt.verify(
