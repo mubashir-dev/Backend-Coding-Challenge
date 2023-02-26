@@ -1,0 +1,1246 @@
+{
+	"info": {
+		"_postman_id": "632b6140-9c6e-4fe9-b3e7-b1958a0cf226",
+		"name": "Owais Capitals",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "9575943"
+	},
+	"item": [
+		{
+			"name": "Health Checks",
+			"item": [
+				{
+					"name": "Ping",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/ping",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"ping"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Authentication Management",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "mubashir@gmail.coma",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "12345678",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Refresh Tokens",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "refreshtoken",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzZjZkNWM3OTRlYzlhYmM4ZTc0ZjhhZCIsIm5hbWUiOiJNdWJhc2hpciBBbGkiLCJyb2xlIjp7Il9pZCI6IjYzZjZjYjAwMDM4MzkzZmY1YzExMjU3NiIsInRpdGxlIjoiQWRtaW5pc3RyYXRvciIsImFjY2VzcyI6eyJyZWFkIjp0cnVlLCJ3cml0ZSI6dHJ1ZSwidXBkYXRlIjpmYWxzZSwiZGVsZXRlIjpmYWxzZX19LCJpYXQiOjE2NzcxNzgyOTIsImV4cCI6MTY3NzE4MTg5MiwiaXNzIjoiT3dhaXMgQ2FwaXRhbHMgQmFja2VuZCBUZXN0In0.CRJp7YJNWnPbYUMgD8Z8Xko_4eTUWYViXtRQOK5sRME",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/auth/refresh-token",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								"refresh-token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Send Password Reset Link",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "mubashir@gmail.coma",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/auth/forgot-password",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								"forgot-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Reset Password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "password",
+									"value": "12345678",
+									"type": "text"
+								},
+								{
+									"key": "passwordConfirm",
+									"value": "12345678",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/auth/forgot-password-restore/3989954a-e976-4b50-b8f7-c7d5bcec8b58",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								"forgot-password-restore",
+								"3989954a-e976-4b50-b8f7-c7d5bcec8b58"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Change Password",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "password",
+									"value": "343434",
+									"type": "text"
+								},
+								{
+									"key": "passwordConfirm",
+									"value": "343434",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/user/change-password/63f5cddd3a8ff7821abb1739",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"change-password",
+								"63f5cddd3a8ff7821abb1739"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Role Management",
+			"item": [
+				{
+					"name": "Index",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzZjZkNWM3OTRlYzlhYmM4ZTc0ZjhhZCIsIm5hbWUiOiJNdWJhc2hpciBBbGkiLCJyb2xlIjp7Il9pZCI6IjYzZjZjYjAwMDM4MzkzZmY1YzExMjU3NiIsInRpdGxlIjoiQWRtaW5pc3RyYXRvciIsImFjY2VzcyI6eyJyZWFkIjp0cnVlLCJ3cml0ZSI6dHJ1ZSwidXBkYXRlIjpmYWxzZSwiZGVsZXRlIjpmYWxzZX19LCJpYXQiOjE2NzcyMzA2MjAsImV4cCI6MTY3NzIzNDIyMCwiaXNzIjoiT3dhaXMgQ2FwaXRhbHMgQmFja2VuZCBUZXN0In0.FVD-WUYC3_5RpSrvlLTv1XE6tqQ0AchV32SsfQGCIbQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "description",
+									"value": "Action",
+									"type": "text"
+								},
+								{
+									"key": "title",
+									"value": "Cartoon",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/role",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"role"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzZjZkNWM3OTRlYzlhYmM4ZTc0ZjhhZCIsIm5hbWUiOiJNdWJhc2hpciBBbGkiLCJyb2xlIjp7Il9pZCI6IjYzZjZjYjAwMDM4MzkzZmY1YzExMjU3NiIsInRpdGxlIjoiQWRtaW5pc3RyYXRvciIsImFjY2VzcyI6eyJyZWFkIjp0cnVlLCJ3cml0ZSI6dHJ1ZSwidXBkYXRlIjpmYWxzZSwiZGVsZXRlIjpmYWxzZX19LCJpYXQiOjE2NzcyMzA2MjAsImV4cCI6MTY3NzIzNDIyMCwiaXNzIjoiT3dhaXMgQ2FwaXRhbHMgQmFja2VuZCBUZXN0In0.FVD-WUYC3_5RpSrvlLTv1XE6tqQ0AchV32SsfQGCIbQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "description",
+									"value": "Action",
+									"type": "text"
+								},
+								{
+									"key": "title",
+									"value": "Cartoon",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/role/63f6cb00038393ff5c112576",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"role",
+								"63f6cb00038393ff5c112576"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Store",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzZjZkNWM3OTRlYzlhYmM4ZTc0ZjhhZCIsIm5hbWUiOiJNdWJhc2hpciBBbGkiLCJyb2xlIjp7Il9pZCI6IjYzZjZjYjAwMDM4MzkzZmY1YzExMjU3NiIsInRpdGxlIjoiQWRtaW5pc3RyYXRvciIsImFjY2VzcyI6eyJyZWFkIjp0cnVlLCJ3cml0ZSI6dHJ1ZSwidXBkYXRlIjpmYWxzZSwiZGVsZXRlIjpmYWxzZX19LCJpYXQiOjE2NzcyMzA2MjAsImV4cCI6MTY3NzIzNDIyMCwiaXNzIjoiT3dhaXMgQ2FwaXRhbHMgQmFja2VuZCBUZXN0In0.FVD-WUYC3_5RpSrvlLTv1XE6tqQ0AchV32SsfQGCIbQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"description\": \"Investor\",\r\n    \"title\": \"Investor\",\r\n    \"access\": {\r\n        \"read\": true,\r\n        \"write\": true,\r\n        \"update\": true,\r\n        \"delete\": true\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/role",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"role"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzZjZkNWM3OTRlYzlhYmM4ZTc0ZjhhZCIsIm5hbWUiOiJNdWJhc2hpciBBbGkiLCJyb2xlIjp7Il9pZCI6IjYzZjZjYjAwMDM4MzkzZmY1YzExMjU3NiIsInRpdGxlIjoiQWRtaW5pc3RyYXRvciIsImFjY2VzcyI6eyJyZWFkIjp0cnVlLCJ3cml0ZSI6dHJ1ZSwidXBkYXRlIjpmYWxzZSwiZGVsZXRlIjpmYWxzZX19LCJpYXQiOjE2NzcyMDcwOTMsImV4cCI6MTY3NzIxMDY5MywiaXNzIjoiT3dhaXMgQ2FwaXRhbHMgQmFja2VuZCBUZXN0In0.fhXK5zm6xXxDzUB84xC2M6oGlQn_4HzbTpbkxPmq8-k",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"description\": \"Administrator\",\r\n    \"title\": \"Administrator\",\r\n    \"access\": {\r\n        \"read\": false,\r\n        \"write\": true,\r\n        \"update\": false,\r\n        \"delete\": false\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/role/63f6cb00038393ff5c112576",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"role",
+								"63f6cb00038393ff5c112576"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzZjZkNWM3OTRlYzlhYmM4ZTc0ZjhhZCIsIm5hbWUiOiJNdWJhc2hpciBBbGkiLCJyb2xlIjp7Il9pZCI6IjYzZjZjYjAwMDM4MzkzZmY1YzExMjU3NiIsInRpdGxlIjoiQWRtaW5pc3RyYXRvciIsImFjY2VzcyI6eyJyZWFkIjp0cnVlLCJ3cml0ZSI6dHJ1ZSwidXBkYXRlIjp0cnVlLCJkZWxldGUiOnRydWV9fSwiaWF0IjoxNjc3MzQyOTg0LCJleHAiOjE2NzczNDY1ODQsImlzcyI6Ik93YWlzIENhcGl0YWxzIEJhY2tlbmQgVGVzdCJ9.qRpYatZX4yJoBqrBrNOUIbZZytffj7i8AZxefsp7r6A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "description",
+									"value": "Action Cartoons",
+									"type": "text"
+								},
+								{
+									"key": "title",
+									"value": "Cartoon 404",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/role/634291a32e491472890db219",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"role",
+								"634291a32e491472890db219"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User Management",
+			"item": [
+				{
+					"name": "Index",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzZjZkNWM3OTRlYzlhYmM4ZTc0ZjhhZCIsIm5hbWUiOiJNdWJhc2hpciBBbGkiLCJyb2xlIjp7Il9pZCI6IjYzZjZjYjAwMDM4MzkzZmY1YzExMjU3NiIsInRpdGxlIjoiQWRtaW5pc3RyYXRvciIsImFjY2VzcyI6eyJyZWFkIjp0cnVlLCJ3cml0ZSI6dHJ1ZSwidXBkYXRlIjpmYWxzZSwiZGVsZXRlIjpmYWxzZX19LCJpYXQiOjE2NzcyMDI2NTIsImV4cCI6MTY3NzIwNjI1MiwiaXNzIjoiT3dhaXMgQ2FwaXRhbHMgQmFja2VuZCBUZXN0In0.ZIE3A5J17Pft693htk2gE88Zj3Z8AlJGkKAboA9yEQ0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "description",
+									"value": "Action",
+									"type": "text"
+								},
+								{
+									"key": "title",
+									"value": "Cartoon",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "description",
+									"value": "Action",
+									"type": "text"
+								},
+								{
+									"key": "title",
+									"value": "Cartoon",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/user/63f543d59d8974bac8b19981",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"63f543d59d8974bac8b19981"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Store",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Mubashir Ali",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "mubashir@gmail.coma",
+									"type": "text"
+								},
+								{
+									"key": "roleId",
+									"value": "63f6cb00038393ff5c112576",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "text"
+								},
+								{
+									"key": "passwordConfirm",
+									"value": "123456",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Sardar Mubashir",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "mubashir@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "roleId",
+									"value": "63f51b1a44f83ebf7b56ba7d",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/user/63f543d59d8974bac8b19981",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"63f543d59d8974bac8b19981"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "description",
+									"value": "Action Cartoons",
+									"type": "text"
+								},
+								{
+									"key": "title",
+									"value": "Cartoon 404",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/user/63f544113ed1ef97d92ba4dd",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"63f544113ed1ef97d92ba4dd"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Status",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/user/status/63f5cddd3a8ff7821abb1739?status=active",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"status",
+								"63f5cddd3a8ff7821abb1739"
+							],
+							"query": [
+								{
+									"key": "status",
+									"value": "active"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Change Password",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "password",
+									"value": "343434",
+									"type": "text"
+								},
+								{
+									"key": "passwordConfirm",
+									"value": "343434",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/user/change-password/63f5cddd3a8ff7821abb1739",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"change-password",
+								"63f5cddd3a8ff7821abb1739"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Investmenttype Management",
+			"item": [
+				{
+					"name": "Index",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "description",
+									"value": "Action",
+									"type": "text"
+								},
+								{
+									"key": "title",
+									"value": "Cartoon",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/investment-types",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"investment-types"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzZjZkNWM3OTRlYzlhYmM4ZTc0ZjhhZCIsIm5hbWUiOiJNdWJhc2hpciBBbGkiLCJyb2xlIjp7Il9pZCI6IjYzZjZjYjAwMDM4MzkzZmY1YzExMjU3NiIsInRpdGxlIjoiQWRtaW5pc3RyYXRvciIsImFjY2VzcyI6eyJyZWFkIjp0cnVlLCJ3cml0ZSI6dHJ1ZSwidXBkYXRlIjp0cnVlLCJkZWxldGUiOnRydWV9fSwiaWF0IjoxNjc3MzQyOTg0LCJleHAiOjE2NzczNDY1ODQsImlzcyI6Ik93YWlzIENhcGl0YWxzIEJhY2tlbmQgVGVzdCJ9.qRpYatZX4yJoBqrBrNOUIbZZytffj7i8AZxefsp7r6A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "description",
+									"value": "Action",
+									"type": "text"
+								},
+								{
+									"key": "title",
+									"value": "Cartoon",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/investment-types/63f6cb00038393ff5c112576",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"investment-types",
+								"63f6cb00038393ff5c112576"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Store",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzZjZkNWM3OTRlYzlhYmM4ZTc0ZjhhZCIsIm5hbWUiOiJNdWJhc2hpciBBbGkiLCJyb2xlIjp7Il9pZCI6IjYzZjZjYjAwMDM4MzkzZmY1YzExMjU3NiIsInRpdGxlIjoiQWRtaW5pc3RyYXRvciIsImFjY2VzcyI6eyJyZWFkIjp0cnVlLCJ3cml0ZSI6dHJ1ZSwidXBkYXRlIjp0cnVlLCJkZWxldGUiOnRydWV9fSwiaWF0IjoxNjc3MzQyOTg0LCJleHAiOjE2NzczNDY1ODQsImlzcyI6Ik93YWlzIENhcGl0YWxzIEJhY2tlbmQgVGVzdCJ9.qRpYatZX4yJoBqrBrNOUIbZZytffj7i8AZxefsp7r6A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Test Category\",\r\n    \"description\": \"Test Category\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/investment-types",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"investment-types"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzZjZkNWM3OTRlYzlhYmM4ZTc0ZjhhZCIsIm5hbWUiOiJNdWJhc2hpciBBbGkiLCJyb2xlIjp7Il9pZCI6IjYzZjZjYjAwMDM4MzkzZmY1YzExMjU3NiIsInRpdGxlIjoiQWRtaW5pc3RyYXRvciIsImFjY2VzcyI6eyJyZWFkIjp0cnVlLCJ3cml0ZSI6dHJ1ZSwidXBkYXRlIjp0cnVlLCJkZWxldGUiOnRydWV9fSwiaWF0IjoxNjc3MzQyOTg0LCJleHAiOjE2NzczNDY1ODQsImlzcyI6Ik93YWlzIENhcGl0YWxzIEJhY2tlbmQgVGVzdCJ9.qRpYatZX4yJoBqrBrNOUIbZZytffj7i8AZxefsp7r6A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"description\": \"Will be associated with all stocks related issues\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/investment-types/63fa3adc7e3178cf358cf73b",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"investment-types",
+								"63fa3adc7e3178cf358cf73b"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzZjZkNWM3OTRlYzlhYmM4ZTc0ZjhhZCIsIm5hbWUiOiJNdWJhc2hpciBBbGkiLCJyb2xlIjp7Il9pZCI6IjYzZjZjYjAwMDM4MzkzZmY1YzExMjU3NiIsInRpdGxlIjoiQWRtaW5pc3RyYXRvciIsImFjY2VzcyI6eyJyZWFkIjp0cnVlLCJ3cml0ZSI6dHJ1ZSwidXBkYXRlIjp0cnVlLCJkZWxldGUiOnRydWV9fSwiaWF0IjoxNjc3MzQyOTg0LCJleHAiOjE2NzczNDY1ODQsImlzcyI6Ik93YWlzIENhcGl0YWxzIEJhY2tlbmQgVGVzdCJ9.qRpYatZX4yJoBqrBrNOUIbZZytffj7i8AZxefsp7r6A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "description",
+									"value": "Action Cartoons",
+									"type": "text"
+								},
+								{
+									"key": "title",
+									"value": "Cartoon 404",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/investment-types/63fa3ceb7e3178cf358cf752",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"investment-types",
+								"63fa3ceb7e3178cf358cf752"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Investment Management",
+			"item": [
+				{
+					"name": "Index",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "description",
+									"value": "Action",
+									"type": "text"
+								},
+								{
+									"key": "title",
+									"value": "Cartoon",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/investment",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"investment"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "description",
+									"value": "Action",
+									"type": "text"
+								},
+								{
+									"key": "title",
+									"value": "Cartoon",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/investment/63fb2d025bd8d9554fba4b96",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"investment",
+								"63fb2d025bd8d9554fba4b96"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Status",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzZjZkNWM3OTRlYzlhYmM4ZTc0ZjhhZCIsIm5hbWUiOiJNdWJhc2hpciBBbGkiLCJyb2xlIjp7Il9pZCI6IjYzZjZjYjAwMDM4MzkzZmY1YzExMjU3NiIsInRpdGxlIjoiQWRtaW5pc3RyYXRvciIsImFjY2VzcyI6eyJyZWFkIjp0cnVlLCJ3cml0ZSI6dHJ1ZSwidXBkYXRlIjp0cnVlLCJkZWxldGUiOnRydWV9fSwiaWF0IjoxNjc3NDA0NzUwLCJleHAiOjE2Nzc0MDgzNTAsImlzcyI6Ik93YWlzIENhcGl0YWxzIEJhY2tlbmQgVGVzdCJ9.gnDg1496AMeL7c4Qb4VuSCpB3hw63Mq54lk-v_s004E",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "description",
+									"value": "Action",
+									"type": "text"
+								},
+								{
+									"key": "title",
+									"value": "Cartoon",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/investment/status/63fb2d025bd8d9554fba4b96?status=sold",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"investment",
+								"status",
+								"63fb2d025bd8d9554fba4b96"
+							],
+							"query": [
+								{
+									"key": "status",
+									"value": "sold"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Store",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"investmentTitle\": \"DELL Corp\",\r\n    \"investmentType\": \"63fa3adc7e3178cf358cf73b\",\r\n    \"currentDividendValue\":40,\r\n    \"purchaseDate\":\"2023-02-26\",\r\n    \"symbol\":\"Dell\",\r\n    \"quantity\":40,\r\n    \"purchasePrice\":1200,\r\n    \"currentValue\":1270,\r\n    \"averagePrice\":1180,\r\n    \"targetAmount\":1400\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/investment",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"investment"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"investmentTitle\": \"TBL Corp\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/investment/63fb2d025bd8d9554fba4b96",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"investment",
+								"63fb2d025bd8d9554fba4b96"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "http://localhost:3000/investment/63fb2eff927e9e21777118ff",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"investment",
+								"63fb2eff927e9e21777118ff"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Portfolio Management",
+			"item": [
+				{
+					"name": "Index",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "description",
+									"value": "Action",
+									"type": "text"
+								},
+								{
+									"key": "title",
+									"value": "Cartoon",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/investment-types/portfolio",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"investment-types",
+								"portfolio"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
