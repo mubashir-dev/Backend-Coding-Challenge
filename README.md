@@ -21,7 +21,7 @@
 6: Check the application health, through ping endpoint in postman collection
 ```
 ```python
-7: Add Some fake data for roles & investment types, through the postman collection
+7: Hit Authentication's Login endpoint using the following creds email:admin@example.com and password:admin
 ```
 
 Note: Make sure you have properly installed docker,node,mongodb,and Postman.
