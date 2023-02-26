@@ -12,7 +12,7 @@
 3: Add the required environmental variables to .env
 ```
 ```python
-4: Import Postman Collection, which could be found in postman-collection folder
+4: Import Postman Collection, which is in  postman-collection folder
 ```
 ```python
 5: Run docker compose up --build
