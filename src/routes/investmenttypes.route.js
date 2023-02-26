@@ -7,6 +7,7 @@ const {
 const { validate } = require("../middlewares/validation.middleware");
 
 router.get("/", InvestmentTypeController.index);
+router.get("/portfolio", InvestmentTypeController.indexPortfolio);
 router.get("/:id", InvestmentTypeController.find);
 router.post(
   "/",

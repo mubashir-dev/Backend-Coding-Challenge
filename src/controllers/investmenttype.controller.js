@@ -2,6 +2,16 @@ const ObjectId = require("mongoose").Types.ObjectId;
 const apiResponse = require("../utils/response.util");
 const investmentTypeService = require("../services/investmenttypes.service");
 
+//investment portfolio
+exports.indexPortfolio = async (req, res, next) => {
+  try {
+    const data = await investmentTypeService.portfolio(req, res, next);
+    return apiResponse.successData(res, "request processed successfully", data);
+  } catch (error) {
+    next(error);
+  }
+};
+
 // index;
 exports.index = async (req, res, next) => {
   try {

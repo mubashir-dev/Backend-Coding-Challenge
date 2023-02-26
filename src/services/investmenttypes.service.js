@@ -2,6 +2,62 @@ const InvestmentType = require("../models/investmenttype.model");
 const apiResponse = require("../utils/response.util");
 const ObjectId = require("mongoose").Types.ObjectId;
 
+exports.portfolio = async (req, res, next) => {
+  try {
+    const result = InvestmentType.aggregate([
+      {
+        $lookup: {
+          from: "investments",
+          let: { id: "$_id" },
+          pipeline: [
+            { $match: { $expr: { $eq: ["$investmentType", "$$id"] } } },
+            {
+              $group: {
+                _id: "$investmentType",
+                totalInvestedAmount: {
+                  $sum: { $multiply: ["$quantity", "$averagePrice"] },
+                },
+                currentEquityAmount: {
+                  $sum: { $multiply: ["$purchasePrice", "$quantity"] },
+                },
+                target: {
+                  $sum: "$targetAmount",
+                },
+                actual: {
+                  $sum: "$currentValue",
+                },
+                totalPurchase: {
+                  $sum: "$purchasePrice",
+                },
+                totalQuantity: {
+                  $sum: "$quantity",
+                },
+              },
+            },
+          ],
+          as: "investments",
+        },
+      },
+      {
+        $unwind: { path: "$investments", preserveNullAndEmptyArrays: true },
+      },
+      {
+        $project: {
+          _id: 1,
+          title: 1,
+          investments: 1,
+          description: 1,
+          createdAt: 1,
+          updatedAt: 1,
+        },
+      },
+    ]);
+    return result;
+  } catch (error) {
+    next(error);
+  }
+};
+
 exports.findAll = async (req, res, next) => {
   try {
     const result = InvestmentType.find();
