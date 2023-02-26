@@ -13,7 +13,7 @@ services:
       MONGO_INITDB_ROOT_PASSWORD: $DB_PASSWORD
       MONGO_INITDB_DATABASE: $DB_NAME
     volumes:     
-      - dbdata:/data/db
+      - dbdata:/data/db 
  server:
     image: server
     depends_on:
@@ -38,6 +38,13 @@ services:
       - .:/usr/src/app/
       - .env/:/usr/src/app/.env
       - node_modules:/usr/src/app/node_modules
+ migration:
+        image: server
+        command: [
+           "node","./src/seed/index.seed.js"
+           ]
+        depends_on:
+            - mongoDb
 volumes:
   dbdata:
   node_modules:

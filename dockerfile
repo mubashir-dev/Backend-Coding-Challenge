@@ -10,6 +10,9 @@ RUN npm install
 
 COPY . .
 
+COPY wait-for.sh .
+
+
 EXPOSE 3000
 
 CMD ["npm", "start"]
