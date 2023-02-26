@@ -10,6 +10,7 @@ const {
   UserRoutes,
   AuthRoutes,
   InvestmentTypesRoutes,
+  Investment,
 } = require("./src/routes/index.routes");
 
 //global middlewares
@@ -28,6 +29,7 @@ app.get("/ping", (req, res, next) => {
 app.use("/role", [auth, acl], RoleRoutes);
 app.use("/user", [auth, acl], UserRoutes);
 app.use("/investment-types", [auth, acl], InvestmentTypesRoutes);
+app.use("/investment", [auth, acl], Investment);
 app.use("/auth", AuthRoutes);
 
 //404
