@@ -4,7 +4,7 @@ const { Encryption } = require("../utils/hashing.util");
 
 module.exports.seedUser = async () => {
   await User.deleteMany({});
-  const role = Role.findOne({
+  const role = await Role.findOne({
     title: "Administrator",
   });
   const passwordHash = await Encryption.encrypt("admin"); //admin
