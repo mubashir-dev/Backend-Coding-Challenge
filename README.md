@@ -24,4 +24,4 @@
 7: Hit Authentication's Login endpoint using the following creds email:admin@example.com and password:admin
 ```
 
-Note: Make sure you have properly installed docker,node,mongodb,and Postman.
+Note: Make sure you have properly installed docker,and Postman.
